@@ -16,16 +16,16 @@ CREATE SCHEMA IF NOT EXISTS `bearddb` DEFAULT CHARACTER SET utf8 ;
 USE `bearddb` ;
 
 -- -----------------------------------------------------
--- Table `strokingdb`
+-- Table `stroking`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `strokingdb` ;
+DROP TABLE IF EXISTS `stroking` ;
 
-CREATE TABLE IF NOT EXISTS `strokingdb` (
-  `idbeard` INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `stroking` (
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL,
   `location` VARCHAR(45) NULL,
   `date` DATETIME NULL,
-  PRIMARY KEY (`idbeard`))
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 SET SQL_MODE = '';
@@ -40,3 +40,13 @@ GRANT SELECT, INSERT, TRIGGER, UPDATE, DELETE ON TABLE * TO 'student'@'localhost
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- -----------------------------------------------------
+-- Data for table `stroking`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `bearddb`;
+INSERT INTO `stroking` (`id`, `name`, `location`, `date`) VALUES (1, 'Alan Frederick', 'Denver', NULL);
+INSERT INTO `stroking` (`id`, `name`, `location`, `date`) VALUES (2, 'Tom Hatherford', 'Pawnee', NULL);
+
+COMMIT;
