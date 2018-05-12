@@ -9,7 +9,7 @@ import javax.persistence.Id;
 
 
 @Entity
-public class Stroking {
+public class Stroke {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,11 +26,11 @@ public class Stroking {
 	
 	// end of fields
 	
-	public Stroking() {
+	public Stroke() {
 	}
 
 
-	public Stroking(int id, String firstName, String lastName, String location) {
+	public Stroke(int id, String firstName, String lastName, String location) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -103,7 +103,7 @@ public class Stroking {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Stroking other = (Stroking) obj;
+		Stroke other = (Stroke) obj;
 		if (firstName == null) {
 			if (other.firstName != null)
 				return false;

@@ -11,7 +11,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import com.skilldistillery.beardjpa.entities.Stroking;
+import com.skilldistillery.beardjpa.entities.Stroke;
 
 class BeardTest {
 	
@@ -20,7 +20,7 @@ class BeardTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		emf = Persistence.createEntityManagerFactory("Stroking");
+		emf = Persistence.createEntityManagerFactory("Stroke");
 		em = emf.createEntityManager();
 	}
 
@@ -31,16 +31,16 @@ class BeardTest {
 	}
 	@Test
 	@DisplayName("Test stroking entity mapping city")
-	void test_stroking_entitiy_mapping_city() {
-		Stroking stroke = em.find(Stroking.class, 1);
+	void test_stroke_entitiy_mapping_city() {
+		Stroke stroke = em.find(Stroke.class, 1);
 		assertEquals("Denver", stroke.getCity());
 		
 	}
 	
 	@Test
 	@DisplayName("Test stroking entity mapping name")
-	void test_stroking_entitiy_mapping_name() {
-		Stroking stroke = em.find(Stroking.class, 2);
+	void test_stroke_entitiy_mapping_name() {
+		Stroke stroke = em.find(Stroke.class, 2);
 		assertEquals("Bob", stroke.getFirstName());
 		assertEquals("Dobbs", stroke.getLastName());
 		

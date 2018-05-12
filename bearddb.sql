@@ -16,11 +16,11 @@ CREATE SCHEMA IF NOT EXISTS `bearddb` DEFAULT CHARACTER SET utf8 ;
 USE `bearddb` ;
 
 -- -----------------------------------------------------
--- Table `stroking`
+-- Table `stroke`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `stroking` ;
+DROP TABLE IF EXISTS `stroke` ;
 
-CREATE TABLE IF NOT EXISTS `stroking` (
+CREATE TABLE IF NOT EXISTS `stroke` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `first_name` VARCHAR(45) NULL,
   `last_name` VARCHAR(45) NULL,
@@ -42,11 +42,11 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 -- -----------------------------------------------------
--- Data for table `stroking`
+-- Data for table `stroke`
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `bearddb`;
-INSERT INTO `stroking` (`id`, `first_name`, `last_name`, `city`) VALUES (1, 'Alan', 'Frederick', 'Denver');
-INSERT INTO `stroking` (`id`, `first_name`, `last_name`, `city`) VALUES (2, 'Bob', 'Dobbs', 'Atlanta');
+INSERT INTO `stroke` (`id`, `first_name`, `last_name`, `city`) VALUES (1, 'Alan', 'Frederick', 'Denver');
+INSERT INTO `stroke` (`id`, `first_name`, `last_name`, `city`) VALUES (2, 'Bob', 'Dobbs', 'Atlanta');
 
 COMMIT;
