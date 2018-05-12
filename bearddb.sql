@@ -22,9 +22,9 @@ DROP TABLE IF EXISTS `stroking` ;
 
 CREATE TABLE IF NOT EXISTS `stroking` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NULL,
-  `location` VARCHAR(45) NULL,
-  `date` DATETIME NULL,
+  `first_name` VARCHAR(45) NULL,
+  `last_name` VARCHAR(45) NULL,
+  `city` VARCHAR(45) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -46,7 +46,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `bearddb`;
-INSERT INTO `stroking` (`id`, `name`, `location`, `date`) VALUES (1, 'Alan Frederick', 'Denver', NULL);
-INSERT INTO `stroking` (`id`, `name`, `location`, `date`) VALUES (2, 'Tom Hatherford', 'Pawnee', NULL);
+INSERT INTO `stroking` (`id`, `first_name`, `last_name`, `city`) VALUES (1, 'Alan', 'Frederick', 'Denver');
+INSERT INTO `stroking` (`id`, `first_name`, `last_name`, `city`) VALUES (2, 'Bob', 'Dobbs', 'Atlanta');
 
 COMMIT;

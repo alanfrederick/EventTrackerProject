@@ -30,10 +30,20 @@ class BeardTest {
 		emf.close();
 	}
 	@Test
-	@DisplayName("Test beard entity mapping")
-	void test_beard_entitiy_mapping() {
+	@DisplayName("Test stroking entity mapping city")
+	void test_stroking_entitiy_mapping_city() {
 		Stroking stroke = em.find(Stroking.class, 1);
-		assertEquals("Alan Frederick", stroke.getName());
+		assertEquals("Denver", stroke.getCity());
+		
+	}
+	
+	@Test
+	@DisplayName("Test stroking entity mapping name")
+	void test_stroking_entitiy_mapping_name() {
+		Stroking stroke = em.find(Stroking.class, 2);
+		assertEquals("Bob", stroke.getFirstName());
+		assertEquals("Dobbs", stroke.getLastName());
+		
 	}
 
 }

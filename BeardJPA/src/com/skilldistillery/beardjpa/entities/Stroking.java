@@ -1,16 +1,12 @@
 package com.skilldistillery.beardjpa.entities;
 
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
-import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 public class Stroking {
@@ -19,71 +15,85 @@ public class Stroking {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	private String name;
+	@Column(name="first_name")
+	private String firstName;
+
+	@Column(name="last_name")
+	private String lastName;
 	
-	private String location;
-	
-	@Column(name="date")
-	@Temporal(TemporalType.DATE)
-	@CreationTimestamp
-	private Date dateStroked;
+	private String city;
+
 	
 	// end of fields
 	
 	public Stroking() {
 	}
 
-	public Stroking(int id, String name, String location, Date dateStroked) {
+
+	public Stroking(int id, String firstName, String lastName, String location) {
 		super();
 		this.id = id;
-		this.name = name;
-		this.location = location;
-		this.dateStroked = dateStroked;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.city = city;
 	}
 
-	public String getName() {
-		return name;
+
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public String getLocation() {
-		return location;
+
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setLocation(String location) {
-		this.location = location;
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
-	public Date getDateStroked() {
-		return dateStroked;
+
+	public String getCity() {
+		return city;
 	}
 
-	public void setDateStroked(Date dateStroked) {
-		this.dateStroked = dateStroked;
+
+	public void setCity(String city) {
+		this.city = city;
 	}
+
 
 	public int getId() {
 		return id;
 	}
 
+
 	@Override
 	public String toString() {
-		return "Beard [id=" + id + ", name=" + name + ", location=" + location + ", dateStroked=" + dateStroked + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Stroking [id=").append(id).append(", firstName=").append(firstName).append(", lastName=")
+				.append(lastName).append(", location=").append(city).append("]");
+		return builder.toString();
 	}
+
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((dateStroked == null) ? 0 : dateStroked.hashCode());
+		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
 		result = prime * result + id;
-		result = prime * result + ((location == null) ? 0 : location.hashCode());
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
+		result = prime * result + ((city == null) ? 0 : city.hashCode());
 		return result;
 	}
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -94,25 +104,27 @@ public class Stroking {
 		if (getClass() != obj.getClass())
 			return false;
 		Stroking other = (Stroking) obj;
-		if (dateStroked == null) {
-			if (other.dateStroked != null)
+		if (firstName == null) {
+			if (other.firstName != null)
 				return false;
-		} else if (!dateStroked.equals(other.dateStroked))
+		} else if (!firstName.equals(other.firstName))
 			return false;
 		if (id != other.id)
 			return false;
-		if (location == null) {
-			if (other.location != null)
+		if (lastName == null) {
+			if (other.lastName != null)
 				return false;
-		} else if (!location.equals(other.location))
+		} else if (!lastName.equals(other.lastName))
 			return false;
-		if (name == null) {
-			if (other.name != null)
+		if (city == null) {
+			if (other.city != null)
 				return false;
-		} else if (!name.equals(other.name))
+		} else if (!city.equals(other.city))
 			return false;
 		return true;
 	}
+	
+	
 	
 	
 }
