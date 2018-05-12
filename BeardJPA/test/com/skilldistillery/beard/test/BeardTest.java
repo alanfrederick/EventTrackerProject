@@ -1,4 +1,4 @@
-package com.skilldistillery.beardjpa.test;
+package com.skilldistillery.beard.test;
 
 import static org.junit.Assert.assertEquals;
 
@@ -11,7 +11,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import com.skilldistillery.beardjpa.entities.Stroke;
+import com.skilldistillery.beard.Stroke;
 
 class BeardTest {
 	
@@ -20,7 +20,7 @@ class BeardTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		emf = Persistence.createEntityManagerFactory("Stroke");
+		emf = Persistence.createEntityManagerFactory("Beard");
 		em = emf.createEntityManager();
 	}
 

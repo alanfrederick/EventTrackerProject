@@ -1,4 +1,4 @@
-package com.skilldistillery.beardjpa.entities;
+package com.skilldistillery.beard;
 
 
 import javax.persistence.Column;
@@ -30,7 +30,7 @@ public class Stroke {
 	}
 
 
-	public Stroke(int id, String firstName, String lastName, String location) {
+	public Stroke(int id, String firstName, String lastName, String city) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -77,8 +77,8 @@ public class Stroke {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Stroking [id=").append(id).append(", firstName=").append(firstName).append(", lastName=")
-				.append(lastName).append(", location=").append(city).append("]");
+		builder.append("Stroke [id=").append(id).append(", firstName=").append(firstName).append(", lastName=")
+				.append(lastName).append(", city=").append(city).append("]");
 		return builder.toString();
 	}
 
