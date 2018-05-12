@@ -1,24 +1,31 @@
 ## Event Tracker Project
-Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa q
-ui officia deserunt mollit anim id est laborum.
+This is the week 11 weekend project for SD14.
 #### Project Description
-Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa q
-ui officia deserunt mollit anim id est laborum.
-#### Lessons learned
-Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa q
-ui officia deserunt mollit anim id est laborum.
+Event Tracker:
+This project tracks how often my amazing beard gets stroked.  Seriously.
+
+This project in its current state includes a single table database, a JPA
+Project for entity mapping/controlling, and Spring Boot with REST to push/fetch
+JSON from a front end.  Full CRUD is available on the single entity.
+
+This project can be accessed by EC2 at 13.58.14.102:8080/<insert path>
+
+Currently there is no UI/website for this project.  To access, modify, or delete
+objects, utilize an API inspector such as Postman.
+
+#### Using Event Tracker
+The only current entity is Strokes, representing the amount of times my beard
+has been stroked, by whom, and where.  The path to access the api is /api/.
+
+*To access a list of all strokes available, the path /api/strokes with a GET request
+will return all strokes.
+
+*To access a single stroke via ID, the path /api/strokes/{id} where {id} = a valid
+integer.
+
+
+*To update a stroke, either by its entirety or by a single field, the path /api/strokes/{id}
+with a PATCH request will allow header injection.
+
+*To delete a stroke, the path/api/strokes/{id} with a DELETE requet will remove
+the current entity from the list and database.
